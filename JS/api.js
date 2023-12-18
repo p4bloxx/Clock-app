@@ -53,13 +53,13 @@ let typeHour = document.querySelector('#type-hour')
 
 window.addEventListener('load', () => {
   newDate();
+  newIP();
 })
 
 setInterval(newDate, 30000)
 
 function newDate () {
   let date = new Date();
-  newIP();
   updateCounters(date);
   updateHours(date)
   isBst(date)
