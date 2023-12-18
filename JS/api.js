@@ -94,7 +94,7 @@ function updateHours(date){
   let time = date.getHours();
   let minute = date.getMinutes();
   
-  if(time === 6 || time > 0) {
+  if(time >= 6 && time < 15) {
     partDay.innerText = 'GOOD MORNING';
     dayPics.forEach((day) => {
     day.setAttribute('data-active', true)
@@ -108,16 +108,20 @@ function updateHours(date){
     moon.style.display = 'none';
   }
   
-  if(time === 15) {
+  if(time >= 15 && time < 18) {
     partDay.innerText = 'GOOD AFTERNOON';
     console.log('ciao')
   }
   
-  if(time === 18) {
+  if(time >= 18 && time < 21) {
     partDay.innerText = 'GOOD EVENING';
   }
+
+  if(time >= 0 && time < 6){
+    partDay.innerText = 'GOOD NIGHT'
+  }
   
-  if(time === 21){
+  if(time >= 21 && time < 6){
     dayPics.forEach((day) => {
       day.setAttribute('data-active', false)
     })
