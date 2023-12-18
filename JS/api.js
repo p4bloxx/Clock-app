@@ -145,7 +145,7 @@ function updateHours(date){
 //API for get info by user's connection
 const newIP = async () => {
   try {
-    const adress = await fetch('http://ip-api.com/json/');
+    const adress = await fetch('https://ip-api.com/json/');
 
     if (!adress.ok) {
       if (adress.status === 404) {
