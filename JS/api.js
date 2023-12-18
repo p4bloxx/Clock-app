@@ -145,7 +145,7 @@ function updateHours(date){
 //API for get info by user's connection
 const newIP = async () => {
   try {
-    const adress = await fetch('https://ip-api.com/json/');
+    const adress = await fetch('https://ipapi.co/json/');
 
     if (!adress.ok) {
       if (adress.status === 404) {
@@ -157,11 +157,13 @@ const newIP = async () => {
       }
     }
     
-    const adressJSON = await adress.json();
+    const adressJSON = adress;
     const data = adressJSON;
+    console.log(adressJSON)
     const currentCity = data.city;
     const currentCode = data.countryCode;
     const currentTimezone = data.timezone;
+    console.log(currentCode)
 
     country.textContent = `${currentCity}`
     countryCode.textContent = `${currentCode}`
