@@ -1,0 +1,71 @@
+@use 'variables' as *;
+
+.quote-box{
+  @include flex-row;
+  transition: all 0.2s ease;
+  opacity: 1;
+  width: 100%;
+  justify-content: space-between;
+    @media screen and (min-width: 1200px) {
+      padding-inline-end: 50%;
+    }
+    .quotes{
+      @include flex-column;
+      gap: 8px;
+      width: fit-content;
+        &:first-child{
+          max-width: 40ch;
+          @media screen and (min-width: 767px) {
+            max-width: 50ch;
+          }
+        }
+    }
+}
+
+.hidden{
+  opacity: 0;
+}
+
+#new-quote{
+  display:block;
+  align-self: start;
+    & svg path{
+      transition: all 0.3s ease;
+    }
+
+    & svg:hover path{
+      opacity: 1;
+    }
+}
+
+.day-night{
+  @include flex-row;
+  justify-content: start;
+  gap: $fs-16;
+  margin-block-end: $fs-16;
+}
+
+.current-time{
+  @include flex-column;
+  gap: 3rem;
+  text-align: left;
+    h1{
+      margin-block-end: $fs-16;
+    }
+
+    @media screen and (min-width: 767px) {
+      gap: 5.5rem;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+  .time-box{
+    width: 100%;
+  }
+
+  .current-time{
+    @include flex-between;
+    flex-direction: row;
+    width: 100%;
+  }
+}

@@ -1,0 +1,506 @@
+//Tipography
+$ff: 'Inter', sans-serif;
+$fw-reg: 400;
+$fw-bld: 700;
+
+$fs-10: 0.625rem;
+$fs-12: 0.75rem;
+$fs-13: 0.8125rem;
+$fs-15: 0.9375rem;
+$fs-16: 1rem;
+$fs-18: 1.125rem;
+$fs-20: 1.25rem;
+$fs-24: 1.5rem;
+$fs-32: 2rem;
+$fs-40: 2.5rem;
+$fs-56: 3.5rem;
+$fs-100: 6.25rem;
+$fs-175: 10.9375rem;
+$fs-200: 12.5rem;
+
+//Colors
+$white: rgba(255, 255, 255, 1);
+$white-075: rgba(255, 255, 255, 0.75);
+$dark-grey: rgba(48, 48, 48, 1);
+$mid-grey: rgba(153, 153, 153, 1);
+$black: rgba(0, 0, 0, 1);
+$black-05: rgba(0, 0, 0, 0.5);
+$black-075: rgba(0, 0, 0, 0.75);
+
+//Utility classes and mixins
+.clr-white{
+  color: $white;
+}
+
+.bg-white{
+  background-color: $white;
+}
+
+.bg-white075{
+  background-color: $white-075;
+}
+
+.clr-dark-grey{
+  color: $dark-grey;
+}
+
+.bg-dark-grey{
+  background-color: $dark-grey;
+}
+
+.clr-black05{
+  color: $black-05;
+}
+
+.clr-black075{
+  color: $black-075;
+}
+
+h4[data-variant="night-time"],
+p[data-variant="night-time"]{
+  color: $white;
+}
+
+.container[data-variant="night-time"]{
+  background-color: $black-075;
+}
+
+.fw-light{
+  font-weight: 300;
+}
+
+.fw-reg{
+  font-weight: 400;
+}
+
+.fw-bld{
+  font-weight: 700;
+}
+
+@mixin flex-row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-between{
+  @include flex-row;
+  justify-content: space-between;
+}
+
+@mixin flex-column{
+  @include flex-row;
+  flex-direction: column;
+  align-items: start;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul,
+ol {
+  list-style: none;
+}
+
+button{
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  font-family: $ff;
+  overflow-y: hidden;
+  position: relative;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+//Components
+.photobox{
+  position: fixed;
+  inset: 0;
+    & img{
+      width: 100%;
+      height: 100%;
+    }
+}
+
+img[data-active="false"]{
+  display: none;
+}
+
+img[data-active="true"]{
+  display: block;
+}
+
+.desk[data-active="true"],
+.tablet[data-active="true"]{
+  display: none;
+}
+
+@media screen and (min-width: 767px) {
+  .tablet[data-active="true"]{
+    display: block;
+  }
+
+  .mob[data-active="true"],
+  .desk[data-active="true"]{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .tablet[data-active="true"],
+  .mob[data-active="true"]{
+    display: none;
+  }
+
+  .desk[data-active="true"]{
+    display: block;
+  }
+}
+
+main{
+  min-height: 100%;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+    &::after{
+      content: '';
+      inset: 0;
+      position: absolute;
+      background-color: $black-05;
+      z-index: 0;
+    }
+
+    & > *{
+      position: relative;
+      z-index: 1;
+    }
+ }
+ 
+.daytime{
+  position: relative;
+  padding-inline:1.625rem;
+  padding-block: 2rem 2.5rem;
+  height: 100vh;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+    @media screen and (min-width: 767px) {
+      padding-inline: 4rem 8.1875rem;
+      padding-block: 5rem 4rem;
+    }
+
+    @media screen and (min-width: 1200px) {
+      padding-inline: 10.3125rem;
+      padding-block: 3.5rem 6.125rem;
+    }
+
+    .contain{
+      @include flex-column;
+      transition: all 0.3s ease;
+      height: 100%;
+      transform: translateY(0);
+    }
+
+      .reduce2{
+        transform: translateY(-2.5rem);
+          @media screen and (min-width: 767px) {
+            transform: translateY(-4rem);
+          }
+
+          @media screen and (min-width: 1200px) {
+            transform: translateY(-5rem);
+          }
+      }
+    
+}
+
+.time-box{
+  margin-block-start: auto;
+}
+
+.reduce{
+  height: 60vh;
+  padding-block-end: 0;
+  @media screen and (min-width: 1200px) {
+   height: 50vh;
+  }
+}
+
+ .info{
+   transition: transform 0.3s ease;
+   backdrop-filter: blur(20.387113571166992px); 
+   padding: 3.125rem 1.625rem;
+   height: 40vh;
+   transform: translateY(100%);
+   @include flex-column;
+   justify-content: center;
+   align-items: stretch;
+      
+      & > div{
+        @include flex-between;
+      }
+
+      & > div:not(:last-child){
+        margin-block-end: $fs-16;
+      }
+
+      @media screen and (min-width: 767px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding-block: 7.5rem;
+        padding-inline-start: 4rem;
+        justify-items: start;
+        row-gap:  3.125rem;
+        column-gap: 5rem;
+          & > div{
+            @include flex-column;
+          }
+
+          & > div:nth-child(2),
+          & > div:nth-child(4){
+            order: 2;
+          }
+
+          & > div:not(:last-child){
+            margin-block-end: 0;
+          }
+      }
+
+      @media screen and (min-width: 1200px) {
+        padding-block: 4.625rem;
+        padding-inline: 10.3125rem;
+        height: 50vh;
+      }
+ }
+
+ .info-open{
+  transform: translateY(0%);
+ }
+
+//Block element
+#moon{
+  display: none;
+    &[data-variant="night-time"]{
+      display: inline;
+    }
+}
+
+#sun[data-variant="night-time"]{
+  display: none;
+}
+
+#more-info{
+  @include flex-row;
+  font-size: $fs-12;
+  gap: $fs-15;
+  padding: 0.1875rem 0.1875rem 0.25rem $fs-16;
+  border-radius: 1.75rem;
+  letter-spacing: 0.234375rem;
+  transition: all 0.3s ease;
+    @media screen and (min-width: 767px) {
+      font-size: $fs-16;
+      padding: 0.5rem 0.5625rem 0.5rem $fs-20;
+    }
+
+    @media screen and (min-width: 1200px) {
+      align-self: end;
+    }
+
+    &:hover span{
+      background-color: $mid-grey;
+    }
+}
+
+#arrow{
+  width: $fs-32;
+  height: $fs-32;
+  border-radius: 50%;
+  display: inline-grid;
+  place-content: center;
+  transition: all 0.3s ease;
+}
+
+.rotate{
+  transform: rotate(180deg);
+}
+
+h1{
+  font-size: $fs-100;
+  line-height: 100%;
+  letter-spacing: -0.15625rem;
+}
+
+#type-hour{
+  letter-spacing: normal;
+  line-height: 1.75rem;
+  margin-inline-start: 0.3125rem;
+}
+
+#type-hour,
+h2,h3{
+  font-size: $fs-15;
+}
+
+h2,h3{
+  letter-spacing: 0.1875rem;
+  text-transform: uppercase;
+}
+
+.currently{
+  display: none;
+}
+
+#part-day{
+  display: inline;
+}
+
+h4{
+  font-size: $fs-10;
+  letter-spacing: 2px;
+  line-height: 1.75rem;
+  text-transform: uppercase;
+}
+
+.quotes{
+  font-size: $fs-12;
+  line-height: 1.375rem;
+}
+
+.info p{
+  font-size: $fs-20;
+}
+
+@media screen and (min-width: 767px) {
+  h1{
+    font-size: $fs-175;
+    letter-spacing: -0.2734375rem;
+  }
+
+  #type-hour{
+    font-size: $fs-32;
+    margin-inline-start: 0.6875rem;
+  }
+
+  h2,h3{
+    font-size: $fs-18;
+    letter-spacing: 0.225rem;
+    line-height: 1.75rem;
+  }
+
+ .currently{
+  display: inline;
+ }
+
+  h4{
+    font-size: $fs-13;
+    line-height: 0.1625rem;
+  }
+
+  .quotes{
+    font-size: $fs-18;
+    line-height: 1.75rem;
+  }
+
+  .info p{
+    font-size: $fs-40;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  h1{
+    font-size: $fs-200;
+  }
+
+  #type-hour{
+    font-size: $fs-40;
+  }
+
+  h2{
+    font-size: $fs-24;
+    letter-spacing: 0.1625rem;
+  }
+
+  h3{
+    font-size: $fs-20;
+    letter-spacing: 0.25rem;
+  }
+
+  h4{
+    font-size: $fs-15;
+    letter-spacing: 0.1875rem;
+  }
+
+  .info p{
+    font-size: $fs-56;
+  }
+}

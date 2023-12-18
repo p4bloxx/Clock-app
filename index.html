@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>clock app</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/variables.css">
+  <link rel="stylesheet" href="CSS/main.css">
+  <script src="JS/api.js" defer></script>
+  <script src="JS/script.js" defer></script>
+</head>
+<body>
+  <div class="photobox">
+    <img src="ASSETS/Images/bg-image-daytime mob.jpg" alt="" class="mob" data-variant="day" data-active="true">
+    <img src="ASSETS/Images/bg-image-nighttime mob.jpg" alt="" class="mob" data-variant="night" data-active="false">
+
+    <img src="ASSETS/Images/bg-image-daytime tablet.jpg" alt="" class="tablet" data-variant="day" data-active="true">
+    <img src="ASSETS/Images/bg-image-nighttime tablet.jpg" alt="" class="tablet" data-variant="night" data-active="false">
+
+    <img src="ASSETS/Images/bg-image-daytime.jpg" alt="" class="desk" data-variant="day" data-active="true">
+    <img src="ASSETS/Images/bg-image-nighttime.jpg" alt="" class="desk" data-variant="night" data-active="false">
+  </div>
+  <main>
+    <div class="container | daytime" data-collapse="false">
+      <div class="contain">
+        <div class="quote-box" data-hidden="false">
+          <div class="quotes">
+            <p id="quote" class="clr-white fw-reg">“The science of operations, as derived from mathematics more especially, is a science of itself, and has its own abstract truth and value.”</p>
+            <p id="author" class="clr-white fw-bld">Ada Lovelace</p>
+          </div>
+          <button id="new-quote"><svg width="18" height="18" xmlns="http://www.w3.org/2000/svg"><path d="M7.188 10.667a.208.208 0 01.147.355l-2.344 2.206a5.826 5.826 0 009.578-2.488l2.387.746A8.322 8.322 0 013.17 14.94l-2.149 2.022a.208.208 0 01-.355-.148v-6.148h6.52zm7.617-7.63L16.978.958a.208.208 0 01.355.146v6.23h-6.498a.208.208 0 01-.147-.356L13 4.765A5.825 5.825 0 003.43 7.26l-2.386-.746a8.32 8.32 0 0113.76-3.477z" fill="#FFF" fill-rule="nonzero" opacity=".5"/></svg></button>
+        </div>
+        <div class="time-box">
+          <div class="day-night">
+            <img src="ASSETS/Images/icon-sun.svg" alt="" id="sun">
+            <img src="ASSETS/Images/icon-moon.svg" alt="" id="moon">
+            <h3 class="clr-white fw-reg"><span id="part-day"></span><span class="currently">, IT’S CURRENTLY</span></h3>
+          </div>
+          <div class="current-time">
+            <div>
+              <h1 class="clr-white fw-bld"><span id="hour"></span>:<span id="minutes"></span><span id="type-hour" class="fw-light">GMT</span></h1>
+              <h2 class="location-info | clr-white fw-bld">in <span id="location"></span>, <span id="state"></span></h2>
+            </div>
+              <button id="more-info" class="bg-white clr-black075 fw-bld">MORE<span id="arrow" data-open="false" class="bg-dark-grey"><img src="ASSETS/Images/icon-arrow-down.svg" alt=""></span></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container | info bg-white075" data-collapse="true">
+      <div>
+        <h4 data-variant="" class="clr-dark-grey fw-reg">CURRENT TIMEZONE</h4>
+        <p data-variant="" id="timezone" class="clr-dark-grey fw-bld">Europe/London</p>
+      </div>
+      <div>
+        <h4 data-variant="" class="clr-dark-grey fw-reg">Day of the year</h4>
+        <p data-variant="" id="day-year" class="clr-dark-grey fw-bld">295</p>
+      </div>
+      <div>
+        <h4 data-variant="" class="clr-dark-grey fw-reg">Day of the week</h4>
+        <p data-variant="" id="day-week" class="clr-dark-grey fw-bld">5</p>
+      </div>
+      <div>
+        <h4 data-variant="" class="clr-dark-grey fw-reg">Week number</h4>
+        <p data-variant="" id="number-week" class="clr-dark-grey fw-bld">42</p>
+      </div>
+    </div>
+  </main>
+
+  
+</body>
+</html>
