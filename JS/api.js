@@ -157,7 +157,7 @@ const newIP = async () => {
       }
     }
     
-    const adressJSON = adress;
+    const adressJSON = await adress.json();
     const data = adressJSON;
     console.log(adressJSON)
     const currentCity = data.city;
