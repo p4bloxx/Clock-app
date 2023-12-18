@@ -59,10 +59,10 @@ setInterval(newDate, 30000)
 
 function newDate () {
   let date = new Date();
+  newIP();
   updateCounters(date);
   updateHours(date)
   isBst(date)
-  newIP();
 }
 
 function updateCounters(date){
