@@ -32,9 +32,11 @@
     & svg path{
       transition: all 0.3s ease;
     }
-
-    & svg:hover path{
-      opacity: 1;
+    
+    @media screen and (min-width: 1200px) {
+      & svg:hover path{
+        opacity: 1;
+      }
     }
 }
 

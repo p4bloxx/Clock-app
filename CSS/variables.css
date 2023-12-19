@@ -345,9 +345,9 @@ main > * {
   #more-info {
     align-self: end;
   }
-}
-#more-info:hover span {
-  background-color: rgb(153, 153, 153);
+  #more-info:hover span {
+    background-color: rgb(153, 153, 153);
+  }
 }
 
 #arrow {

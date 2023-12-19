@@ -345,9 +345,9 @@ main > * {
   #more-info {
     align-self: end;
   }
-}
-#more-info:hover span {
-  background-color: rgb(153, 153, 153);
+  #more-info:hover span {
+    background-color: rgb(153, 153, 153);
+  }
 }
 
 #arrow {
@@ -504,8 +504,10 @@ h4 {
 #new-quote svg path {
   transition: all 0.3s ease;
 }
-#new-quote svg:hover path {
-  opacity: 1;
+@media screen and (min-width: 1200px) {
+  #new-quote svg:hover path {
+    opacity: 1;
+  }
 }
 
 .day-night {

@@ -375,10 +375,9 @@ main{
 
     @media screen and (min-width: 1200px) {
       align-self: end;
-    }
-
-    &:hover span{
-      background-color: $mid-grey;
+      &:hover span{
+        background-color: $mid-grey;
+      }
     }
 }
 
