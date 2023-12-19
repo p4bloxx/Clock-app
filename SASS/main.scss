@@ -1,401 +1,73 @@
 @use 'variables' as *;
 
-header{
-  padding-block-start: 2.5rem;
-  overflow: hidden;
-  z-index: 10;
-  padding-inline: $fs-32;
-    @media screen and (min-width: 1200px) {
-      max-width: 69rem;
-      margin-inline: auto;
-      padding-inline: 0;
-    }
-}
-
-.box-social{
-  gap: 2.5rem;
-}
-
-.nav-mobile{
-  position: static;
+.quote-box{
   @include flex-row;
-}
-
-@media screen and (max-width: 700px){
-  .nav-mobile{
-    position: fixed;
-    background-color: $dark-blue-95;
-    inset: 0;
-    z-index: 10;
-    height: 100vh;
-    padding: 2.5rem 2rem 3rem 2rem;
-    @include flex-column;
-    align-items: stretch;
-    justify-content: start;
-    transition: all 0.4s linear;
-    font-size: $fs-20;
-    line-height: 17px;
-    letter-spacing: 2.308px; 
-    transform: translateX(100%);
-      #primary-nav{
-        margin-block: 2.5rem auto;
-      }
-  }
-
-  .open-nav{
-    transform: translateX(0);
-  }
-}
-
-main{
-  padding-block-start: 5rem;
+  transition: all 0.2s ease;
+  opacity: 1;
+  width: 100%;
+  justify-content: space-between;
     @media screen and (min-width: 1200px) {
-      padding-block-start: calc(5rem + 5vh);
+      padding-inline-end: 50%;
     }
-    .hero-section{
-      @media screen and (min-width: 1200px) {
-          @include flex-row;
-          flex-direction: row-reverse;
-          margin-inline: 10.3125rem 5.625rem;
-          gap: 4.0625rem;
-      }
-      .hero-img{
-        position: relative;
-        margin-inline: auto;
-        background: url('../ASSETS/IMAGES/illustration-hero.svg') no-repeat;
-        background-size: cover;
-        width: calc(313px + 10vw);
-        height: calc(209px + 5vh);
-          @media screen and (min-width: 700px) {
-              width: calc(313px + 25vw);
-              height: calc(209px + 15vh);
-            
+    .quotes{
+      @include flex-column;
+      gap: 8px;
+      width: fit-content;
+        &:first-child{
+          max-width: 40ch;
+          @media screen and (min-width: 767px) {
+            max-width: 50ch;
           }
-
-          @media screen and (min-width: 900px) {
-            width: 36.1875rem;
-            height: 25rem;
-          }
-
-          @media screen and (min-width: 1200px) {
-            margin-inline: 0;
-            transform: scale(1.1);
-          }
-      }
-
-      .hero-text{
-        text-align: center;
-        margin-block-start: 4rem;
-        margin-inline: auto;
-        @include flex-column;
-          @media screen and (min-width: 900px) {
-            margin-block-start: 6rem;
-          }
-
-          p{
-            margin-block: $fs-16 $fs-32;
-          }
-
-          div{
-            gap: $fs-10;
-              @media screen and (min-width: 700px) {
-                gap: $fs-15;
-            }
-          }
-
-          @media screen and (min-width: 1200px) {
-            text-align: left;
-            align-items: start;
-            margin-block-start: 0;
-            margin-inline: 0;
-            padding-inline: 0;
-            max-width: 33.75rem;
-           
-              h1{
-                max-width: 20ch;
-                width: auto;
-              }
-
-              p{
-                max-width: 50ch;
-                margin-inline: 0;
-              }
-
-              div{
-                gap: $fs-16;
-              }
-           }
-      }
-    }
-
-
-    .features-section{
-      padding-block-start: 8.75rem;
-      position: relative;
-        & > :nth-child(2){
-          margin-block-end: 2.5rem;
-        }
-
-        .tab-list{
-          @include flex-column;
-          margin-block-end: 4.5rem;
-        }
-
-        .tab > :first-child{
-          margin-block-end: 4.375rem;
-            @media screen and (min-width: 700px) {
-              transform: scale(1.1);
-              margin-inline-start: 4rem;
-          }
-        }
-
-        @media screen and (min-width: 700px) {
-          .tab {
-            margin-block-start: 10rem;
-          }
-        }
-
-        .tab p{
-          margin-block-end: $fs-15;
-          @media screen and (min-width: 700px) {
-            margin-block-end: $fs-18;
-          }
-
-          @media screen and (min-width: 900px) {
-            margin-block-end: $fs-32;
-          }
-        }
-
-        @media screen and (min-width: 1200px) {
-          .tab-list,
-          .tab{
-            @include flex-row;
-          }
-
-          .tab{
-            gap: 10rem;
-          }
-
-          .tab > div{
-            text-align: left;
-            margin-block-end: 2rem;
-              & p{
-                width: 40ch;
-              }
-          }
-        }
-    }
-
-    .card-section{
-      padding-block-start: 4.8125rem;
-        @media screen and (min-width: 700px) {
-          padding-block-start: calc(5rem + 5vh);
-        }
-
-        & p{
-          margin-block-end: 2.5rem;
-          @media screen and (min-width: 1200px) {
-            margin-block-start: $fs-16;
-          }
-        }
-
-        & span{
-          font-size: $fs-15;
-          line-height: 28px;
-        }
-    }
-
-    .FAQ-section{
-      padding-block-start: 8.75rem;
-        @media screen and (min-width: 1200px) {
-          padding-block-start: 9.375rem;
-        }
-        h2{
-          line-height: 125%;
-        }
-
-        & > p{
-          margin-block: $fs-16 5rem;
-        }
-
-        .accordion{
-          text-align: left;
-          @include flex-column;
-          gap: 1.5rem;
-            @media screen and (min-width: 1200px) {
-              max-width: 33.75rem;
-              margin-inline: auto;
-            }
-          
-            .accordion-btn{
-              padding: 0;
-              transition: color 0.3s linear;
-              cursor: pointer;
-                &:hover{
-                  color: $red;
-                }
-            }
-
-            span{
-              width: 18px;
-              height: 8px;
-              display: grid;
-              place-items: center;
-            }
-
-          
-            .accordion-content > div{
-              overflow: hidden;
-              padding-block-start: 1.5rem;
-            }
-        }
-
-        .accordion-info-btn{
-          margin-block-start: 3rem;
         }
     }
 }
 
-.arrow-active{
-  transform: rotate(180deg);
+.hidden{
+  opacity: 0;
 }
 
-.arrow-active path{
-  stroke: $red;
-}
-
-.contact-section{
-  margin-block-start: 7.6875rem;
-  padding-block: 3.75rem;
-  position: relative;
-    @media screen and (min-width: 700px) {
-      padding-inline: calc(6rem + 5vw);
+#new-quote{
+  display:block;
+  align-self: start;
+    & svg path{
+      transition: all 0.3s ease;
     }
-
-    @media screen and (min-width: 900px) {
-      padding-inline: calc(6rem + 15vw);
-    }
-
+    
     @media screen and (min-width: 1200px) {
-      padding-inline: 31.25rem;
-      margin-block-start: 9.375rem;
-      padding-block-end: 4.6875rem;
-    }
-
-    ::placeholder{
-      font-size: $fs-14;
-      letter-spacing: 0.25px
-    }
-
-    .input-box{
-      position: relative;
-      
-
-      input[data-type="input-email"]{
-        margin-block: $fs-32 $fs-16;
-        padding-block: $fs-10;
-        padding-inline-start: $fs-20;
-        width: 100%;
-        line-height: 28px;
-        border: 2px solid transparent;
-        border-bottom-width: 0px;
-        transition: all 0.3s linear;
-        position: relative;
-        color: $dark-blue;
-      }
-  
-      .icon-err{
-        position: absolute;
-        right: $fs-16;
-        bottom: 2rem;
-        opacity: 0;
-        transition: all 0.1s linear;
-        z-index: 5;
-      }
-
-      .err{
-        font-size: $fs-10;
-        font-style: italic;
-        position: absolute;
-        left: 5px;
-        bottom: 0;
-        z-index: 2;
-        display: none;
-        transition: all 0.3s linear;
-      }
-
-      .err-active{
-        display: block;
-        bottom: 1.5rem;
-      }
-
-      .active{
-        border-color: $red;
-        border-bottom-width: 25px;
-      }
-      
-      .icon-active{
+      & svg:hover path{
         opacity: 1;
       }
-
-      @media screen and (min-width: 1200px) {
-       @include flex-row;
-
-        gap: $fs-16;
-        margin-block-start: 2.25rem;
-          input[data-type="input-email"]{
-            margin-block: 0;
-            max-width: 300px;
-          }
-
-          .icon-err{
-            right: 35%;
-            bottom: 2.5rem;
-          }
-
-          .err{
-            bottom: 7px;
-          }
-      }
-      
     }
 }
 
-footer{
-  padding-block: 2.5rem;
+.day-night{
+  @include flex-row;
+  justify-content: start;
+  gap: $fs-16;
+  margin-block-end: $fs-16;
+}
+
+.current-time{
   @include flex-column;
-    
-    .logo-footer{
-      fill: $white;
+  gap: 3rem;
+  text-align: left;
+    h1{
+      margin-block-end: $fs-16;
     }
-    .nav{
-      margin-block: 2.5rem 3.125rem;
-    }
-}
 
-@media screen and (min-width: 900px) {
-  footer{
-    @include flex-row;
-    padding-block: 2.25rem;
-    justify-content: start;
-    padding-inline: $fs-32;
-      .nav{
-        margin-block: 0;
-        margin-inline: 4rem auto;
-      }
-  }
+    @media screen and (min-width: 767px) {
+      gap: 5.5rem;
+    }
 }
 
 @media screen and (min-width: 1200px) {
-  footer{
-    padding-inline:10.3125rem;
-      .icon-social,
-      .icon-social path {
-        transition: all 0.3s linear;
-          &:hover,
-          &:hover path{
-            fill: $red;
-          }
-      }
+  .time-box{
+    width: 100%;
+  }
+
+  .current-time{
+    @include flex-between;
+    flex-direction: row;
+    width: 100%;
   }
 }

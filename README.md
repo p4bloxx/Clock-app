@@ -39,7 +39,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [https://p4bloxx.github.io/Clock-app/](https://p4bloxx.github.io/Clock-app/)
 
 ## My process
 
@@ -54,7 +54,7 @@ Users should be able to:
 - SASS variables
 - Javascript
 - Quotes generator - [https://docs.quotable.io/docs/api/ZG9jOjQ2NDA2-introduction]
-- IP Geolocation - [https://ip-api.com/]
+- IP Geolocation - [https://docs.ipdata.co/docs]
 
 ### What I learned
 
