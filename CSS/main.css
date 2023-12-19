@@ -78,10 +78,14 @@ ol {
 button {
   background: none;
   border: none;
-  cursor: pointer;
   margin: 0;
   padding: 0;
   display: block;
+}
+@media screen and (min-width: 1200px) {
+  button {
+    cursor: pointer;
+  }
 }
 
 /* Set core body defaults */
@@ -196,7 +200,7 @@ main > * {
   position: relative;
   padding-inline: 1.625rem;
   padding-block: 2rem 2.5rem;
-  height: 100vh;
+  height: 100dvh;
   overflow: hidden;
   transition: all 0.3s ease;
 }
@@ -241,12 +245,12 @@ main > * {
 }
 
 .reduce {
-  height: 60vh;
+  height: 60dvh;
   padding-block-end: 0;
 }
 @media screen and (min-width: 1200px) {
   .reduce {
-    height: 50vh;
+    height: 50dvh;
   }
 }
 
@@ -254,7 +258,7 @@ main > * {
   transition: transform 0.3s ease;
   backdrop-filter: blur(20.3871135712px);
   padding: 3.125rem 1.625rem;
-  height: 40vh;
+  height: 40dvh;
   transform: translateY(100%);
   display: flex;
   justify-content: center;
@@ -301,7 +305,7 @@ main > * {
   .info {
     padding-block: 4.625rem;
     padding-inline: 10.3125rem;
-    height: 50vh;
+    height: 50dvh;
   }
 }
 
