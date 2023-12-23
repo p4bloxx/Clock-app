@@ -93,6 +93,7 @@ function updateCounters(date){
 function updateHours(date){
   let time = date.getHours();
   let minute = date.getMinutes();
+  hour.innerText = time
   
   if(time >= 6 && time < 15) {
     partDay.innerText = 'GOOD MORNING';
@@ -121,7 +122,7 @@ function updateHours(date){
     partDay.innerText = 'GOOD NIGHT'
   }
   
-  if(time >= 21 && time < 6){
+  if(time >= 18 && time < 6){
     dayPics.forEach((day) => {
       day.setAttribute('data-active', false)
     })
@@ -133,8 +134,6 @@ function updateHours(date){
     sun.style.display = 'none';
     moon.style.display = 'block';
 
-  } else {
-    hour.innerText = time;
   }
 
   if(minute === 0){
