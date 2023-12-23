@@ -120,9 +120,7 @@ function updateHours(date){
 
   if(time >= 0 && time < 6){
     partDay.innerText = 'GOOD NIGHT'
-  }
-  
-  if(time >= 18 && time < 6){
+
     dayPics.forEach((day) => {
       day.setAttribute('data-active', false)
     })
@@ -133,7 +131,6 @@ function updateHours(date){
 
     sun.style.display = 'none';
     moon.style.display = 'block';
-
   }
 
   if(minute === 0){
